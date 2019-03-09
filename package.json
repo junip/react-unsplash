@@ -1,0 +1,26 @@
+{
+  "name": "react-unsplash-gallery",
+  "version": "1.0.0",
+  "description": "A sample unsplash clone with react",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "clear": "rm -rf dist/ .cache/",
+    "lint": "eslint **/*.{js,jsx} --quiet"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "prettier": "^1.16.4",
+    "unsplash-js": "^5.0.0"
+  }
+}
