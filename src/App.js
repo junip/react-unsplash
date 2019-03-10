@@ -1,54 +1,50 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import unplash from "./Api";
-import { css, StyleSheet } from "aphrodite";
+import unsplash from "./Api";
 import { toJson } from "unsplash-js";
+import Loader from "./Loader";
+import Masonry from "react-responsive-masonry";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // Don't call this.setState() here!
+
     this.state = { photos: [] };
   }
 
   componentDidMount() {
-    unplash.search
-      .photos("dog", 1, 15)
+    unsplash.photos
+      .listPhotos(1, 50)
       .then(toJson)
       .then(data => {
         if (data) {
-          this.setState({ photos: data.results });
-          console.log("-----", this.state.photos);
+          this.setState({ photos: data });
         }
       });
   }
 
   render() {
     const { photos } = this.state;
+    let loader;
+    if (!photos.length) {
+      loader = <Loader />;
+    }
 
     return (
-      <div className={css(styles.photo_grid)}>
-        <div className={css(styles.phto_grid_column)}>
-          {photos.map(photo => {
-            const imageStyle = {
-              backgroundImage: `url(${photo.urls.small})`
-            };
-            return <div style={imageStyle} />;
-          })}
-        </div>
+      <div>
+        {loader}
+        <Masonry columnsCount={3} gutter="10px">
+          {photos.map((photo, i) => (
+            <img
+              key={i}
+              src={photo.urls.small}
+              style={{ width: "100%", display: "block" }}
+            />
+          ))}
+        </Masonry>
       </div>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  photo_grid: {
-    display: "flex",
-    "justify-content": "center"
-  },
-  phto_grid_column: {
-    width: "32%"
-  }
-});
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));
