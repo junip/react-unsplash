@@ -4,7 +4,7 @@
   "description": "A sample unsplash clone with react",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "clear": "rm -rf dist/ .cache/",
