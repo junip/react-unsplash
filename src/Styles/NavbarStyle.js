@@ -5,6 +5,7 @@ const navStyle = StyleSheet.create({
     "display": "flex",
     "position": "fixed",
     "width": "100%",
+    "top": "0",
     "padding-right": "20px",
     "padding-left": "10px",
     "background-color": "#fff"

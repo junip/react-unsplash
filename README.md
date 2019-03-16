@@ -1,6 +1,6 @@
 # React Unsplash
 
-React Unsplash is photo search webapp made in React which uses Unsplash APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/)
+React Unsplash is photo search webapp made in React which uses Unsplash APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/).
 
 ![Interface](Assets/unsplash.png?raw=true "Web App picture")
 
@@ -38,3 +38,10 @@ Make a new `.env` file and do the following
 ~/ npm run dev 
 
 # app will run on port 1234
+
+```
+
+## Contribution
+
+The devlopement of the App is still in progress. Only some part is implemented. You can help with 
+code contribution to add more functionality in the App.
