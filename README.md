@@ -1,6 +1,8 @@
 # React Unsplash
 
-React Unsplash is photo search webapp made in React which uses Unsplash APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/).
+React Unsplash is photo search webapp made in React which uses Unsplash JSON APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/) the most powerful photo engine in the world.
+
+
 
 ![Interface](Assets/unsplash.png?raw=true "Web App picture")
 
@@ -11,12 +13,12 @@ You are required to have [Node.js](https://nodejs.org/) installed to run the app
 
 ## Getting Started
 
-Install [unsplash-js](https://github.com/unsplash/unsplash-js) 
+Install [unsplash-js](https://github.com/unsplash/unsplash-js) ([github](https://github.com/unsplash/unsplash-js))
 
 ```
 npm i --save unsplash-js
 ```
-[Github Link](https://github.com/unsplash/unsplash-js)
+
 
 
 
