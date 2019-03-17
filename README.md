@@ -18,12 +18,20 @@ Install [unsplash-js](https://github.com/unsplash/unsplash-js) ([github](https:/
 ```
 npm i --save unsplash-js
 ```
+## Creating a developer account
 
+To access the Unsplash API, first [register](https://unsplash.com/developers) as a developer.
+
+
+## Registering your application
+
+Once your account has been registered for the API, log in -> go to the Developers page -> Go to "Your Applications"->  "New Application" and fill in the required details.
 
 
 
 SignUp or Login in [Unsplash](https://unsplash.com). Go to API/devlopers ->  Documentation. Then Register your app to get the API key and secret.
 
+## API Usage
 Make a new `.env` file and do the following
 
 ```
