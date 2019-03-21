@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "aphrodite/no-important";
 import AvatarImg from "./images/avatar.jpg";
 import navStyle from "./Styles/NavbarStyle";
-import homeIcon from './images/ms-icon.png'
+import homeIcon from "./images/ms-icon.png";
 
 const Navbar = () => {
   return (
@@ -12,20 +12,32 @@ const Navbar = () => {
           <img className={css(navStyle.homeIconImage)} src={homeIcon} />
         </a>
         <div className={css(navStyle.inputDiv)}>
-          <button className={css(navStyle.searchButton)}><i className="fas fa-search"></i></button>
-          <input className={css(navStyle.inputBox)} type="text" placeholder="Search free high-resolution photos"/>
+          <button className={css(navStyle.searchButton)}>
+            <i className="fas fa-search" />
+          </button>
+          <input
+            className={css(navStyle.inputBox)}
+            type="text"
+            placeholder="Search free high-resolution photos"
+          />
         </div>
       </div>
       <div className="clickable-element">
         <ul className="Link-Element">
           <li className={css(navStyle.listElement)}>
-            <a href="" className={css(navStyle.anchorDiv)}>Home</a>
+            <a href="" className={css(navStyle.anchorDiv)}>
+              Home
+            </a>
           </li>
           <li className={css(navStyle.listElement)}>
-            <a href="" className={css(navStyle.anchorDiv)}>Collections</a>
+            <a href="" className={css(navStyle.anchorDiv)}>
+              Collections
+            </a>
           </li>
           <li className={css(navStyle.listElement)}>
-            <a href="" className={css(navStyle.anchorDiv)}>Explore</a>
+            <a href="" className={css(navStyle.anchorDiv)}>
+              Explore
+            </a>
           </li>
           <li className={css(navStyle.listElement)}>
             <a href="" className={css(navStyle.anchorDiv)}>
@@ -44,7 +56,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className={css(navStyle.avatar)}>
-            <img src={AvatarImg} className={css(navStyle.avatarImg)}/>
+          <img src={AvatarImg} className={css(navStyle.avatarImg)} />
         </div>
       </div>
     </nav>

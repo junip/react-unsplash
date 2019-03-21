@@ -7,17 +7,15 @@ import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
-    this.state = { 
+    this.state = {
       photos: [],
       page: 1,
       per_page: 50,
       isLoading: false
     };
-    
   }
 
   fetchPhotos() {
@@ -26,7 +24,7 @@ class App extends React.Component {
       .then(toJson)
       .then(data => {
         if (data) {
-          if(this.state.photos.length) {
+          if (this.state.photos.length) {
             let photos = this.state.photos;
             data = photos.concat(data);
             this.setState({ photos: data, isLoading: false });
@@ -39,18 +37,20 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchPhotos();
-    window.addEventListener('scroll', this.handleScroll.bind(this))
+    window.addEventListener("scroll", this.handleScroll.bind(this));
   }
-  
+
   handleScroll() {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight-300) && !this.state.isLoading) {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 300 &&
+      !this.state.isLoading
+    ) {
       let currentPage = this.state.page;
-      currentPage= currentPage + 1;
+      currentPage = currentPage + 1;
       this.setState({ page: currentPage, isLoading: true });
       this.fetchPhotos();
     }
   }
-
 
   render() {
     const { photos, isLoading } = this.state;
@@ -67,7 +67,7 @@ class App extends React.Component {
             <img
               key={i}
               src={photo.urls.small}
-              style={{ width: "100%", display: "block" , borderRadius: "2px"}}
+              style={{ width: "100%", display: "block", borderRadius: "2px" }}
             />
           ))}
         </Masonry>

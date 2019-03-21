@@ -2,7 +2,7 @@ import React from "react";
 import { css, StyleSheet } from "aphrodite/no-important";
 
 /**
- *  Custom Loader
+ *  Custom Loader in UI to show loading feature
  */
 
 const keyFrame = {
