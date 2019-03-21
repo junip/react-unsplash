@@ -7,43 +7,71 @@ import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
 
-    this.state = { photos: [] };
+    this.state = { 
+      photos: [],
+      page: 1,
+      per_page: 50,
+      isLoading: false
+    };
+    
   }
 
-  componentDidMount() {
+  fetchPhotos() {
     unsplash.photos
-      .listPhotos(1, 50)
+      .listPhotos(this.state.page, this.state.per_page)
       .then(toJson)
       .then(data => {
         if (data) {
-          this.setState({ photos: data });
+          if(this.state.photos.length) {
+            let photos = this.state.photos;
+            data = photos.concat(data);
+            this.setState({ photos: data, isLoading: false });
+          } else {
+            this.setState({ photos: data, isLoading: false });
+          }
         }
       });
   }
 
+  componentDidMount() {
+    this.fetchPhotos();
+    window.addEventListener('scroll', this.handleScroll.bind(this))
+  }
+  
+  handleScroll() {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight-300) && !this.state.isLoading) {
+      let currentPage = this.state.page;
+      currentPage= currentPage + 1;
+      this.setState({ page: currentPage, isLoading: true });
+      this.fetchPhotos();
+    }
+  }
+
+
   render() {
-    const { photos } = this.state;
+    const { photos, isLoading } = this.state;
     let loader;
-    if (!photos.length) {
+    if (!photos.length || isLoading) {
       loader = <Loader />;
     }
 
     return (
       <div>
         <Navbar />
-        {loader}
         <Masonry columnsCount={3} gutter="10px">
           {photos.map((photo, i) => (
             <img
               key={i}
               src={photo.urls.small}
-              style={{ width: "100%", display: "block" , "border-radius": "2px"}}
+              style={{ width: "100%", display: "block" , borderRadius: "2px"}}
             />
           ))}
         </Masonry>
+        {loader}
       </div>
     );
   }

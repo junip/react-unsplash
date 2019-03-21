@@ -17,7 +17,7 @@ const navStyle = StyleSheet.create({
     "margin-top": "3px",
     "width": "782px",
     "height": "40px",
-    "border-radius": "20px",
+    "borderRadius": "20px",
     "box-sizing": "border-box",
     "border": "1px solid #ccc",
     "background": "none",
@@ -83,7 +83,7 @@ listElement: {
     padding: "0 11px",
     "font-size": "14px",
     "line-height": "30px",
-    "border-radius": "4px",
+    borderRadius: "4px",
     "cursor": "pointer",
     "border": "1px solid transparent",
     "box-shadow": "0 1px 1px rgba(0,0,0,.04)",
@@ -116,7 +116,7 @@ listElement: {
   avatarImg: {
     height: "34px",
     width: "34px",
-    "border-radius": "18px",
+    borderRadius: "18px",
     "margin-top": "3px"
   }
 });

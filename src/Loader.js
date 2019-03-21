@@ -16,7 +16,7 @@ const keyFrame = {
 
 const styles = StyleSheet.create({
   loadingStyle: {
-    "border-radius": "50%",
+    borderRadius: "50%",
     border: "5px solid #f3f3f3",
     "border-top": "5px solid #6a62c1",
     width: "30px",
