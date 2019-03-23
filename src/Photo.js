@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite/no-important";
+import buttonStyle from "./Styles/ButtonStyle";
+import download from "./images/download_icon.png";
 
 const phtoStyle = StyleSheet.create({
   imageStyle: {
@@ -8,25 +10,13 @@ const phtoStyle = StyleSheet.create({
     borderRadius: "2px"
   },
   imageDiv: {
+    position: "relative",
     ":hover": {
       cursor: "zoom-in"
     }
   },
-  collectButton: {
-    "font-size": "14px",
-    "line-height": "30px",
-    cursor: "pointer !important",
-    "border-radius": "4px",
-    color: "#777",
-    "background-color": "#ddd!important",
-    border: "1px solid transparent",
-    height: "32px",
-    padding: "0 11px",
-    "font-size": "14px",
-    "line-height": "30px"
-  },
-  upperDiv: {
-    display: "inline"
+  inlineDiv: {
+    display: "flex"
   },
   heartIcon: {
     color: "#f54b48"
@@ -35,29 +25,67 @@ const phtoStyle = StyleSheet.create({
     "margin-left": "8px"
   },
   toRight: {
-    float: "right"
+    position: "absolute",
+    right: "45px"
+  },
+
+  lowerDiv: {
+    position: "relative",
+    bottom: "54px",
+    left: "21px"
+  },
+
+  fullNameCss: {
+    color: "white",
+    position: "relative",
+    top: "5px"
+  },
+  userIcon: {
+    "border-radius": "18px"
+  },
+  upperDiv: {
+    display: "flex",
+    position: "absolute",
+    top: "20px",
+    right: "24px"
+  },
+  downloadIcon: {
+    width: "20px",
+    height: "18px",
+    "padding-top": "7px",
+    "justify-content": "center"
   }
 });
 const photo = props => {
-  const { photo_url } = props;
+  const { photoUrl, likes, profilePhoto, fullName, downloadUrl } = props;
   return (
     <div className={css(phtoStyle.imageDiv)}>
-      <img src={photo_url} className={css(phtoStyle.imageStyle)} />
-      <div className={css(phtoStyle.upperDiv, phtoStyle.toRight)}>
-        <button className={css(phtoStyle.collectButton)}>
+      <div className={css(phtoStyle.upperDiv)}>
+        <div className={css(buttonStyle.button)}>
           <span className={css(phtoStyle.heartIcon)}>
-            <i class="fas fa-heart" />
-          </span>
-        </button>
-        <button
-          className={css(phtoStyle.collectButton, phtoStyle.buttonMargin)}
-        >
-          <i class="fas fa-plus" /> Collect
-        </button>
+            <i className="fas fa-heart" />
+          </span>{" "}
+          {likes}
+        </div>
+        <div className={css(buttonStyle.button, phtoStyle.buttonMargin)}>
+          <i className="fas fa-plus" /> Collect
+        </div>
       </div>
-      <div className />
+      <img src={photoUrl} className={css(phtoStyle.imageStyle)} />
+      <div className={css(phtoStyle.inlineDiv, phtoStyle.lowerDiv)}>
+        <img src={profilePhoto} className={css(phtoStyle.userIcon)} />
+        <div className={css(phtoStyle.buttonMargin)}>
+          <span className={css(phtoStyle.fullNameCss)}>{fullName}</span>
+        </div>
+        <a
+          className={css(buttonStyle.button, phtoStyle.toRight)}
+          href={`${downloadUrl}?force=true`}
+          target="_blank"
+        >
+          <img src={download} className={css(phtoStyle.downloadIcon)} />
+        </a>
+      </div>
     </div>
   );
 };
-
 export default photo;

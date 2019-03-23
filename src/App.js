@@ -52,6 +52,12 @@ class App extends React.Component {
       this.fetchPhotos();
     }
   }
+  /**
+   *  Returns the Full Name Of the photographer for a specific Photo
+   */
+  fullName(first, last) {
+    return `${first} ${last}`;
+  }
 
   render() {
     const { photos, isLoading } = this.state;
@@ -65,7 +71,17 @@ class App extends React.Component {
         <Navbar />
         <Masonry columnsCount={3} gutter="10px">
           {photos.map((photo, i) => (
-            <Photo key={i} photo_url={photo.urls.small} />
+            <Photo
+              key={i}
+              photoUrl={photo.urls.small}
+              likes={photo.likes}
+              fullName={this.fullName(
+                photo.user.first_name,
+                photo.user.last_name
+              )}
+              downloadUrl={photo.links.download}
+              profilePhoto={photo.user.profile_image.small}
+            />
           ))}
         </Masonry>
         {loader}
