@@ -5,6 +5,7 @@ import { toJson } from "unsplash-js";
 import Loader from "./Loader";
 import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
+import Photo from "./Photo";
 
 class App extends React.Component {
   constructor(props) {
@@ -64,11 +65,7 @@ class App extends React.Component {
         <Navbar />
         <Masonry columnsCount={3} gutter="10px">
           {photos.map((photo, i) => (
-            <img
-              key={i}
-              src={photo.urls.small}
-              style={{ width: "100%", display: "block", borderRadius: "2px" }}
-            />
+            <Photo key={i} photo_url={photo.urls.small} />
           ))}
         </Masonry>
         {loader}
