@@ -10,13 +10,15 @@ const phtoStyle = StyleSheet.create({
     borderRadius: "2px"
   },
   imageDiv: {
-    position: "relative",
     ":hover": {
       cursor: "zoom-in"
     }
   },
   inlineDiv: {
-    display: "flex"
+    display: "flex",
+    position: "absolute",
+    bottom: "20px",
+    left: "20px"
   },
   heartIcon: {
     color: "#f54b48"
@@ -25,15 +27,10 @@ const phtoStyle = StyleSheet.create({
     "margin-left": "8px"
   },
   toRight: {
-    position: "absolute",
     right: "45px"
   },
 
-  lowerDiv: {
-    position: "relative",
-    bottom: "54px",
-    left: "21px"
-  },
+  lowerDiv: {},
 
   fullNameCss: {
     color: "white",
@@ -45,9 +42,21 @@ const phtoStyle = StyleSheet.create({
   },
   upperDiv: {
     display: "flex",
+    "justify-content": "flex-end",
     position: "absolute",
-    top: "20px",
-    right: "24px"
+    right: "20px",
+    top: "20px"
+  },
+  placeRight: {
+    float: "right"
+  },
+
+  downloadDiv: {
+    display: "flex",
+    "justify-content": "flex-end",
+    position: "absolute",
+    bottom: "20px",
+    right: "20px"
   },
   downloadIcon: {
     width: "20px",
@@ -55,12 +64,17 @@ const phtoStyle = StyleSheet.create({
     "border-radius": "4px",
     "padding-top": "7px",
     "justify-content": "center"
+  },
+  photoRenderDiv: {
+    width: "100%",
+    overflow: "hidden",
+    position: "relative"
   }
 });
 const photo = props => {
   const { photoUrl, likes, profilePhoto, fullName, downloadUrl } = props;
   return (
-    <div className={css(phtoStyle.imageDiv)}>
+    <div className={css(phtoStyle.photoRenderDiv)}>
       <div className={css(phtoStyle.upperDiv)}>
         <div className={css(buttonStyle.button)}>
           <span className={css(phtoStyle.heartIcon)}>
@@ -73,13 +87,15 @@ const photo = props => {
         </div>
       </div>
       <img src={photoUrl} className={css(phtoStyle.imageStyle)} />
-      <div className={css(phtoStyle.inlineDiv, phtoStyle.lowerDiv)}>
+      <div className={css(phtoStyle.inlineDiv)}>
         <img src={profilePhoto} className={css(phtoStyle.userIcon)} />
         <div className={css(phtoStyle.buttonMargin)}>
           <span className={css(phtoStyle.fullNameCss)}>{fullName}</span>
         </div>
+      </div>
+      <div className={css(phtoStyle.downloadDiv)}>
         <a
-          className={css(buttonStyle.button, phtoStyle.toRight)}
+          className={css(buttonStyle.button)}
           href={`${downloadUrl}?force=true`}
           target="_blank"
         >

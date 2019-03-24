@@ -6,13 +6,8 @@ import Loader from "./Loader";
 import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
 import Photo from "./Photo";
-import { StyleSheet, css } from "aphrodite/no-important";
-
-const marginStyle = StyleSheet.create({
-  paddingTop: {
-    "padding-top": "45px"
-  }
-});
+import { css } from "aphrodite";
+import navStyle from "./Styles/NavbarStyle";
 
 class App extends React.Component {
   constructor(props) {
@@ -76,7 +71,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className={css(marginStyle.paddingTop)}>
+        <div className={css(navStyle.marginPhotos)}>
           <Masonry columnsCount={3} gutter="10px">
             {photos.map((photo, i) => (
               <Photo

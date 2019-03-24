@@ -3,12 +3,13 @@ import { StyleSheet } from "aphrodite/no-important";
 const navStyle = StyleSheet.create({
   navbar: {
     display: "flex",
-    position: "fixed",
     width: "100%",
     top: "0",
+    position: "fixed",
     "padding-right": "20px",
     "padding-left": "10px",
-    "background-color": "#fff"
+    "background-color": "#fff",
+    "z-index": "1"
   },
   homeElement: {
     display: "flex"
@@ -118,6 +119,10 @@ const navStyle = StyleSheet.create({
     width: "34px",
     borderRadius: "18px",
     "margin-top": "3px"
+  },
+  marginPhotos: {
+    marginTop: "65px",
+    marginBottom: "20px"
   }
 });
 
