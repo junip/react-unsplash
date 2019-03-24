@@ -52,6 +52,7 @@ const phtoStyle = StyleSheet.create({
   downloadIcon: {
     width: "20px",
     height: "18px",
+    "border-radius": "4px",
     "padding-top": "7px",
     "justify-content": "center"
   }

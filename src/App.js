@@ -6,6 +6,13 @@ import Loader from "./Loader";
 import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
 import Photo from "./Photo";
+import { StyleSheet, css } from "aphrodite/no-important";
+
+const marginStyle = StyleSheet.create({
+  paddingTop: {
+    "padding-top": "45px"
+  }
+});
 
 class App extends React.Component {
   constructor(props) {
@@ -69,21 +76,23 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <Masonry columnsCount={3} gutter="10px">
-          {photos.map((photo, i) => (
-            <Photo
-              key={i}
-              photoUrl={photo.urls.small}
-              likes={photo.likes}
-              fullName={this.fullName(
-                photo.user.first_name,
-                photo.user.last_name
-              )}
-              downloadUrl={photo.links.download}
-              profilePhoto={photo.user.profile_image.small}
-            />
-          ))}
-        </Masonry>
+        <div className={css(marginStyle.paddingTop)}>
+          <Masonry columnsCount={3} gutter="10px">
+            {photos.map((photo, i) => (
+              <Photo
+                key={i}
+                photoUrl={photo.urls.small}
+                likes={photo.likes}
+                fullName={this.fullName(
+                  photo.user.first_name,
+                  photo.user.last_name
+                )}
+                downloadUrl={photo.links.download}
+                profilePhoto={photo.user.profile_image.small}
+              />
+            ))}
+          </Masonry>
+        </div>
         {loader}
       </div>
     );
