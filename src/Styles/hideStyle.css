@@ -1,0 +1,49 @@
+.likeDiv {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    visibility: hidden;
+}
+.footerDiv {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    visibility: hidden;
+}
+.downloadPhoto {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+}
+
+.unplashPhtoDiv {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    color: #999;
+    transition: 2s ease-in-out;
+}
+
+.unplashPhtoDiv:hover {
+    cursor: zoom-in;
+}
+
+.unplashPhtoDiv:hover .likeDiv{
+    visibility: visible;
+    transition: 2s ease-in-out;
+}
+.unplashPhtoDiv:hover .downloadPhoto  {
+    visibility: visible;
+    transition: 2s ease-in-out;
+}
+.unplashPhtoDiv:hover .footerDiv {
+    visibility: visible;
+    transition: 2s ease-in-out;
+}
+
