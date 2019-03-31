@@ -4,6 +4,7 @@ const navStyle = StyleSheet.create({
   navbar: {
     display: "flex",
     width: "100%",
+    left: "0",
     top: "0",
     position: "fixed",
     "padding-right": "20px",
@@ -121,8 +122,9 @@ const navStyle = StyleSheet.create({
     "margin-top": "3px"
   },
   marginPhotos: {
-    marginTop: "65px",
-    marginBottom: "20px"
+    marginBottom: "20px",
+    marginLeft: "50px",
+    marginRight: "50px"
   }
 });
 

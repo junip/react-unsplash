@@ -1,11 +1,15 @@
 # React Unsplash
 
-React Unsplash is photo search webapp made in React which uses Unsplash JSON APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/) the most powerful photo engine in the world.
+React Unsplash is photo search webapp made in React which uses Unsplash JSON APIs for photo search. A clone app of  [https://unsplash.com](https://unsplash.com/) the most powerful photo engine in the world. Trying to make the unplash like UI  and add functionality as much as possible. Completed UI screenshots
 
 
+Main search UI
 
 ![Interface](Assets/unplash-clone.jpg?raw=true "Web App picture")
 
+Donwloading Photos and showing likes
+
+![Interface](Assets/download_photos.jpg?raw=true "Web App picture")
 
 ## Prerequisites
 

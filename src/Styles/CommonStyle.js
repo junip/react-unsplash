@@ -9,7 +9,13 @@ import { StyleSheet } from "aphrodite/no-important";
 const commonStyle = StyleSheet.create({
   linkDecoration: {
     "text-decoration": "none",
+    color: "rgb(255, 255, 255)"
+  },
+  textColor: {
     color: "#fff"
+  },
+  textWeight: {
+    "font-weight": "400"
   },
   highlightText: {
     color: "hsla(0,0%,100%,.55)",

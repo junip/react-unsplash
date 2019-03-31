@@ -70,7 +70,7 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="app">
         <Navbar />
         <Cover />
         <div className={css(navStyle.marginPhotos)}>
