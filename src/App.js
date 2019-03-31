@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 import Photo from "./Photo";
 import { css } from "aphrodite";
 import navStyle from "./Styles/NavbarStyle";
+import Cover from "./Cover";
 
 class App extends React.Component {
   constructor(props) {
@@ -71,6 +72,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
+        <Cover />
         <div className={css(navStyle.marginPhotos)}>
           <Masonry columnsCount={3} gutter="10px">
             {photos.map((photo, i) => (

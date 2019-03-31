@@ -42,13 +42,11 @@ Make a new `.env` file and do the following
 ## Usage
 
 ```sh
-# First install all the project dependencies.
+# install all dependency
+~/ npm install
 
-# Now run the app
+# run
 ~/ npm run dev 
-
-# app will run on port 1234
-
 ```
 
 ## Formatting Code

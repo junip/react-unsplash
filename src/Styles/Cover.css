@@ -1,0 +1,44 @@
+
+.random {
+  background-image: url('https://images.unsplash.com/photo-1552264351-d89bb9c3ff8b');
+  height: 600px;
+  background-color: #000;
+  color: #fff;
+  /* margin-bottom: 48px; */
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cover-content {
+  position: absolute;
+  top: 25%;
+  right: 20%;
+}
+.coverSearchBox {
+  width: 865px;
+  height: 54px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: #111;
+  padding-left: 14px;
+  font-size: 14px;
+}
+.coverSearchBox:focus {
+  outline: none;
+}
+.userName {
+  text-decoration: none;
+}
+.footer-div{
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  font-size:12px;
+  position: relative;
+  bottom: 40px;
+}
+
+
