@@ -2,7 +2,8 @@ import React from "react";
 import "./Styles/Cover.css";
 import { css, StyleSheet } from "aphrodite/no-important";
 import commonStyle from "./Styles/CommonStyle";
-import navStyle from "./Styles/NavbarStyle";
+
+
 
 const coverStyle = StyleSheet.create({
   applyMargin: {
@@ -45,7 +46,11 @@ const coverStyle = StyleSheet.create({
   }
 });
 
-const imagesrc = "https://images.unsplash.com/photo-1552264351-d89bb9c3ff8b";
+// have used hardcoded image source as unplash doesnot provide the apis for the photo of the day
+// you can use what ever you like.
+
+const imagesrc = "https://images.unsplash.com/photo-1553615738-d8e0829f1d61";
+
 class Cover extends React.Component {
   render() {
     return (
