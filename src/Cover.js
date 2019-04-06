@@ -49,7 +49,7 @@ const coverStyle = StyleSheet.create({
 // have used hardcoded image source as unplash doesnot provide the apis for the photo of the day
 // you can use what ever you like.
 
-const imagesrc = "https://images.unsplash.com/photo-1553615738-d8e0829f1d61";
+const imagesrc = "https://images.unsplash.com/photo-1554388828-bb50f4238786";
 
 class Cover extends React.Component {
   render() {

@@ -5,7 +5,7 @@ React Unsplash is photo search webapp made in React which uses Unsplash JSON API
 
 Main search UI
 
-![Interface](Assets/unplash-clone.jpg?raw=true "Web App picture")
+![Interface](Assets/unsplash_clone.jpg?raw=true "Web App picture")
 
 Donwloading Photos and showing likes
 
@@ -70,3 +70,11 @@ Make a new `.env` file and do the following
 
 The devlopement of the App is still in progress. Only some part is implemented. You can help with 
 code contribution to add more functionality in the App.
+
+## License
+
+**React Unplash** is available under the **MIT license**. See the [LICENSE](https://github.com/junipdewan/react-unsplash/blob/master/LICENSE.md) file for more info.
+
+## Important 
+
+[Unplash](https://unsplash.com) is a registered trademark. This project is just for learning purposes and should be treated as such.
