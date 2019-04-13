@@ -27,6 +27,7 @@
     "eslint-config-prettier": "^4.1.0",
     "postcss-modules": "^1.4.1",
     "prettier": "^1.16.4",
+    "react-router-dom": "^5.0.0",
     "unsplash-js": "^5.0.0"
   }
 }
