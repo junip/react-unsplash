@@ -20,7 +20,7 @@
     "react-responsive-masonry": "^2.0.0"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^5.15.1",
