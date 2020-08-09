@@ -14,21 +14,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aphrodite": "^2.3.1",
-    "parcel-bundler": "^1.12.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-responsive-masonry": "^2.0.0"
+    "aphrodite": "^2.4.0",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-responsive-masonry": "^2.1.0"
   },
   "devDependencies": {
     "axios": "^0.18.1",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "eslint": "^5.15.1",
-    "eslint-config-prettier": "^4.1.0",
-    "postcss-modules": "^1.4.1",
-    "prettier": "^1.16.4",
-    "react-router-dom": "^5.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "postcss-modules": "^1.5.0",
+    "prettier": "^1.19.1",
+    "react-router-dom": "^5.2.0",
     "unsplash-js": "^5.0.0"
   }
 }
