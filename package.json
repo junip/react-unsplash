@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "aphrodite": "^2.4.0",
-    "parcel-bundler": "^1.12.4",
+    "parcel-bundler": "^1.12.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-responsive-masonry": "^2.1.0"
