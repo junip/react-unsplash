@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html --out-dir public",
-    "open": "parcel src/index.html --open",
+    "dev": "parcel src/index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "clear": "rm -rf dist/ .cache/",
