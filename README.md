@@ -32,20 +32,19 @@ npm i --save unsplash-js
 To access the Unsplash API, first [register](https://unsplash.com/developers) as a developer.
 
 
-## Registering your application
+## Key Usages 
+- Before using the Unsplash API, [register as a developer](https://unsplash.com/developers).
+- Before using the Unsplash API, read the API Guidelines. Specifically you must:
+   - [hotlink images](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-hotlinking-images)
+   - [attribute photographers](https://help.unsplash.com/en/articles/2511315-guideline-attribution)
+   - [trigger a download when appropriate](https://help.unsplash.com/en/articles/2511258-guideline-triggering-a-download)
 
-Once your account has been registered for the API, log in -> go to the Developers page -> Go to "Your Applications"->  "New Application" and fill in the required details.
 
-
-
-SignUp or Login in [Unsplash](https://unsplash.com). Go to API/devlopers ->  Documentation. Then Register your app to get the API key and secret.
-
-## API Usage
+## API Usage in Project 
 Make a new `.env` file and do the following
 
 ```
- API_KEY = your_api_key
- API_SECRET = your_api_secret
+ APP_ACCESS_KEY = your_app_access_key
 ```
 
 ## Usage
@@ -79,6 +78,7 @@ code contribution to add more functionality in the App.
 ## License
 
 **React Unplash** is available under the **MIT license**. See the [LICENSE](https://github.com/junipdewan/react-unsplash/blob/master/LICENSE.md) file for more info.
+
 
 ## Important 
 
