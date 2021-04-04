@@ -27,13 +27,11 @@ Install [unsplash-js](https://github.com/unsplash/unsplash-js) ([github](https:/
 ```
 npm i --save unsplash-js
 ```
-## Creating a developer account
-
-To access the Unsplash API, first [register](https://unsplash.com/developers) as a developer.
-
+### Website Link
+[react-unsplash](react-unsplash.now.sh)
 
 ## Key Usages 
-- Before using the Unsplash API, [register as a developer](https://unsplash.com/developers).
+- Access the unsplash API by  [registering as a developer](https://unsplash.com/developers).
 - Before using the Unsplash API, read the API Guidelines. Specifically you must:
    - [hotlink images](https://help.unsplash.com/api-guidelines/more-on-each-guideline/guideline-hotlinking-images)
    - [attribute photographers](https://help.unsplash.com/en/articles/2511315-guideline-attribution)
