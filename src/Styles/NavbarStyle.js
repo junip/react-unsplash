@@ -17,7 +17,7 @@ const navStyle = StyleSheet.create({
   },
   inputBox: {
     "margin-top": "3px",
-    width: "782px",
+    width: "1022px",
     height: "40px",
     borderRadius: "20px",
     "box-sizing": "border-box",
