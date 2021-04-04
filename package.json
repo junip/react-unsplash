@@ -29,6 +29,6 @@
     "postcss-modules": "^4.0.0",
     "prettier": "^1.19.1",
     "react-router-dom": "^5.2.0",
-    "unsplash-js": "^5.0.0"
+    "unsplash-js": "^7.0.8"
   }
 }
