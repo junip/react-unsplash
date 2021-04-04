@@ -25,7 +25,6 @@ class App extends React.Component {
     api.photos.list({page: this.state.page, perPage: this.state.per_page}).then(data=> {
       if (data) {
         let paginatedData = data.response.results
-        console.log("paginated response", paginatedData)
         if (this.state.photos.length) {
           let photos = this.state.photos;
           this.setState({ photos: photos.concat(paginatedData), isLoading: false });
