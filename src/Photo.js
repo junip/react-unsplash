@@ -31,8 +31,14 @@ const phtoStyle = StyleSheet.create({
     "justify-content": "center"
   }
 });
-const photo = props => {
-  const { photoUrl, likes, profilePhoto, fullName, downloadUrl } = props;
+const photo = ({
+  photoUrl,
+  likes,
+  profilePhoto,
+  firstName,
+  lastName,
+  downloadUrl
+}) => {
   return (
     <div className="unplashPhtoDiv">
       <div className="likeDiv">
@@ -50,7 +56,9 @@ const photo = props => {
       <div className="footerDiv">
         <img src={profilePhoto} className={css(phtoStyle.userIcon)} />
         <div className={css(phtoStyle.buttonMargin)}>
-          <span className={css(phtoStyle.fullNameCss)}>{fullName}</span>
+          <span
+            className={css(phtoStyle.fullNameCss)}
+          >{`${firstName} ${lastName}`}</span>
         </div>
       </div>
       <div className="downloadPhoto">

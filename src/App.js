@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import { api } from "./Api";
 import Loader from "./Loader";
@@ -9,87 +9,78 @@ import { css } from "aphrodite";
 import navStyle from "./Styles/NavbarStyle";
 import Cover from "./Cover";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [photosData, setPhotosData] = useState({
+    photos: [],
+    page: 1,
+    perPage: 50,
+    isLoading: false
+  });
 
-    this.state = {
-      photos: [],
-      page: 1,
-      per_page: 50,
-      isLoading: false
-    };
-  }
-
-  fetchPhotos() {
-    api.photos.list({page: this.state.page, perPage: this.state.per_page}).then(data=> {
+  const fetchPhotos = useCallback((page, perPage) => {
+    api.photos.list({ page: page, perPage: perPage }).then(data => {
       if (data) {
-        let paginatedData = data.response.results
-        if (this.state.photos.length) {
-          let photos = this.state.photos;
-          this.setState({ photos: photos.concat(paginatedData), isLoading: false });
-        } else {
-          this.setState({ photos: paginatedData, isLoading: false });
-        }
+        let paginatedData = data.response.results;
+        setPhotosData(prev => ({
+          ...prev,
+          photos:
+            page === 1
+              ? [...paginatedData]
+              : prev.sellers.concat([...paginatedData]),
+          isLoading: false
+        }));
       }
-    })
-  }
+    });
+  }, []);
 
-  componentDidMount() {
-    this.fetchPhotos();
-    window.addEventListener("scroll", this.handleScroll.bind(this));
-  }
+  useEffect(() => {
+    fetchPhotos(1, 50);
+    window.addEventListener("scroll", handleScroll);
+  }, [fetchPhotos]);
 
-  handleScroll() {
+  const handleScroll = () => {
     if (
       window.innerHeight + window.scrollY >= document.body.offsetHeight - 300 &&
-      !this.state.isLoading
+      !phtosData.isLoading
     ) {
-      let currentPage = this.state.page;
-      currentPage = currentPage + 1;
-      this.setState({ page: currentPage, isLoading: true });
-      this.fetchPhotos();
+      setPhotosData(prev => ({
+        ...prev,
+        page: prev.page + 1,
+        isLoading: true
+      }));
+      fetchPhotos(photosData.page + 1, photosData.perPage);
     }
-  }
-  /**
-   *  Returns the Full Name Of the photographer for a specific Photo
-   */
-  fullName(first, last) {
-    return `${first} ${last}`;
+  };
+
+  const { photos, isLoading } = photosData;
+  let loader;
+  if (photos.length < 0 || isLoading) {
+    loader = <Loader />;
   }
 
-  render() {
-    const { photos, isLoading } = this.state;
-    let loader;
-    if (photos.length < 0 || isLoading) {
-      loader = <Loader />;
-    }
-
-    return (
-      <div className="app">
-        <Navbar />
-        <Cover />
-        <div className={css(navStyle.marginPhotos)}>
-          <Masonry columnsCount={3} gutter="20px">
-            {photos.length && photos.map((photo, i) => (
+  return (
+    <div className="app">
+      <Navbar />
+      <Cover />
+      <div className={css(navStyle.marginPhotos)}>
+        <Masonry columnsCount={3} gutter="20px">
+          {photos.length &&
+            photos.map((photo, i) => (
               <Photo
                 key={i}
                 photoUrl={photo.urls.small}
                 likes={photo.likes}
-                fullName={this.fullName(
-                  photo.user.first_name,
-                  photo.user.last_name
-                )}
+                firstName={photo.user.first_name}
+                lastName={photo.user.last_name}
                 downloadUrl={photo.links.download}
                 profilePhoto={photo.user.profile_image.small}
               />
             ))}
-          </Masonry>
-        </div>
-        {loader}
+        </Masonry>
       </div>
-    );
-  }
-}
+      {loader}
+    </div>
+  );
+};
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));
