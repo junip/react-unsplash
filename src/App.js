@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import unsplash from "./Api";
-import { toJson } from "unsplash-js";
+import { api } from "./Api";
 import Loader from "./Loader";
 import Masonry from "react-responsive-masonry";
 import Navbar from "./Navbar";
@@ -23,20 +22,18 @@ class App extends React.Component {
   }
 
   fetchPhotos() {
-    unsplash.photos
-      .listPhotos(this.state.page, this.state.per_page)
-      .then(toJson)
-      .then(data => {
-        if (data) {
-          if (this.state.photos.length) {
-            let photos = this.state.photos;
-            data = photos.concat(data);
-            this.setState({ photos: data, isLoading: false });
-          } else {
-            this.setState({ photos: data, isLoading: false });
-          }
+    api.photos.list({page: this.state.page, perPage: this.state.per_page}).then(data=> {
+      if (data) {
+        let paginatedData = data.response.results
+        console.log("paginated response", paginatedData)
+        if (this.state.photos.length) {
+          let photos = this.state.photos;
+          this.setState({ photos: photos.concat(paginatedData), isLoading: false });
+        } else {
+          this.setState({ photos: paginatedData, isLoading: false });
         }
-      });
+      }
+    })
   }
 
   componentDidMount() {
@@ -65,7 +62,7 @@ class App extends React.Component {
   render() {
     const { photos, isLoading } = this.state;
     let loader;
-    if (!photos.length || isLoading) {
+    if (photos.length < 0 || isLoading) {
       loader = <Loader />;
     }
 
@@ -74,8 +71,8 @@ class App extends React.Component {
         <Navbar />
         <Cover />
         <div className={css(navStyle.marginPhotos)}>
-          <Masonry columnsCount={3} gutter="10px">
-            {photos.map((photo, i) => (
+          <Masonry columnsCount={3} gutter="20px">
+            {photos.length && photos.map((photo, i) => (
               <Photo
                 key={i}
                 photoUrl={photo.urls.small}

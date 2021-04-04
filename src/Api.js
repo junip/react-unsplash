@@ -1,7 +1,7 @@
 /**
  * -------------------------------------------------------------
  * Importing Unsplash object and using for fetching image data using
- * APP_KEY and APP_SECRET
+ * APP_KEY
  * SignUp Yourself in `https://unsplash.com/` GO TO Threedots -> API/Devlopers
  * Follow the instruction and API USE restriction to use the API KEY
  * -------------------------------------------------------------
@@ -12,14 +12,6 @@
  *  `https://github.com/unsplash/unsplash-js`
  */
 
-import Unsplash from "unsplash-js";
-
-const APP_ACCESS_KEY = process.env.API_KEY;
-const API_SECRET = process.env.API_SECRET;
-
-const unsplash = new Unsplash({
-  applicationId: APP_ACCESS_KEY,
-  secret: API_SECRET
-});
-
-export default unsplash;
+import { createApi } from 'unsplash-js';
+const APP_ACCESS_KEY = process.env.APP_ACCESS_KEY;
+export const api = createApi({ accessKey: APP_ACCESS_KEY });
