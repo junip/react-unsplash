@@ -26,7 +26,7 @@ const App = () => {
           photos:
             page === 1
               ? [...paginatedData]
-              : prev.sellers.concat([...paginatedData]),
+              : prev.photos.concat([...paginatedData]),
           isLoading: false
         }));
       }
@@ -36,19 +36,22 @@ const App = () => {
   useEffect(() => {
     fetchPhotos(1, 50);
     window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [fetchPhotos]);
 
   const handleScroll = () => {
     if (
       window.innerHeight + window.scrollY >= document.body.offsetHeight - 300 &&
-      !phtosData.isLoading
+      !photosData.isLoading
     ) {
       setPhotosData(prev => ({
         ...prev,
         page: prev.page + 1,
         isLoading: true
       }));
-      fetchPhotos(photosData.page + 1, photosData.perPage);
+      fetchPhotos(photosData.page + 1, 50);
     }
   };
 
