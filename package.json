@@ -1,11 +1,11 @@
 {
   "name": "react-unsplash",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "A sample unsplash clone with react",
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html --out-dir public",
-    "dev": "parcel src/index.html --open",
+    "dev": "parcel src/index.html --open -p 8080",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "clear": "rm -rf dist/ .cache/",
@@ -18,6 +18,7 @@
     "parcel-bundler": "^1.12.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-query": "^3.18.1",
     "react-responsive-masonry": "^2.1.2"
   },
   "devDependencies": {
